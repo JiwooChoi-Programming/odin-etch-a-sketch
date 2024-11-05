@@ -10,8 +10,8 @@ function createGrid(size) {
         square.style.backgroundColor = "white";
         gridContainer.appendChild(square);
 
-        square.addEventListener("mouseover", () => {
-            square.style.backgroundColor = "black";
+        square.addEventListener("mouseover", (color) => {
+            changeColor(color);
         });
 
         function clearGrid() {
@@ -22,6 +22,11 @@ function createGrid(size) {
 
         clearGrid();
     }
+}
+
+function changeColor(color) {
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    color.target.style.backgroundColor = "#" + randomColor;
 }
 
 buttonContainer.addEventListener("click", () => {
