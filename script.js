@@ -1,17 +1,6 @@
 let buttonContainer = document.querySelector("button");
 let gridContainer = document.querySelector(".container");
 
-buttonContainer.addEventListener("click", () => {
-    restartGrid();
-})
-
-function restartGrid() {
-    let number = prompt("How would you like the grid size (1 - 100)", "100");
-    gridContainer.style.gridTemplateRows = `repeat(${number}, 1fr)`;
-    gridContainer.style.gridTemplateColumns = `repeat(${number}, 1fr)`;
-    createGrid(number);
-}
-
 function createGrid(size) {
     gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
     gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -33,6 +22,17 @@ function createGrid(size) {
 
         clearGrid();
     }
+}
+
+buttonContainer.addEventListener("click", () => {
+    restartGrid();
+})
+
+function restartGrid() {
+    let number = prompt("How would you like the grid size (1 - 100)", "100");
+    gridContainer.style.gridTemplateRows = `repeat(${number}, 1fr)`;
+    gridContainer.style.gridTemplateColumns = `repeat(${number}, 1fr)`;
+    createGrid(number);
 }
 
 createGrid(16);
