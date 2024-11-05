@@ -1,4 +1,5 @@
 let gridContainer = document.querySelector(".container");
+let buttonContainer = document.querySelector("button");
 
 function createGrid(size) {
     gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
@@ -23,8 +24,6 @@ function createGrid(size) {
     }
 }
 
-
-let buttonContainer = document.querySelector("button");
 buttonContainer.addEventListener("click", () => {
     restartGrid();
 })
