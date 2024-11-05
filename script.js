@@ -1,16 +1,15 @@
-function createGrid(rows, columns){
-    const gridContainer = document.querySelector(".container");
-    for (i = 0; i < rows; i++) {
-        for (j = 0; j < columns; j++) {
-        const grid = document.createElement("div");
-        grid.classList.add("grid");
-        grid.addEventListener('mouseover', (color) => {
-            color.target.classList.add('green');
-        });
+let buttonContainer = document.querySelector("button");
+let gridContainer = document.querySelector(".container");
 
-        gridContainer.appendChild(grid);
-        }
-    }
+buttonContainer.addEventListener("click", () => {
+    restartGrid();
+})
+
+function restartGrid() {
+    let number = prompt("How would you like the grid size (1 - 100)", "100");
+    gridContainer.style.gridTemplateRows = `repeat${number}, 1fr`;
+    gridContainer.style.gridTemplateColumns = `repeat${number}, 1fr`;
+    createGrid(number);
 }
 
-createGrid(16, 16);
+restartGrid();
