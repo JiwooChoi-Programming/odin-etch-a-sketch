@@ -1,4 +1,3 @@
-let buttonContainer = document.querySelector("button");
 let gridContainer = document.querySelector(".container");
 
 function createGrid(size) {
@@ -24,6 +23,8 @@ function createGrid(size) {
     }
 }
 
+
+let buttonContainer = document.querySelector("button");
 buttonContainer.addEventListener("click", () => {
     restartGrid();
 })
