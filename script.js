@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     popup.addEventListener("click", () => {
         let size = getSize();
         createBoard(size);
+        resetBoard();
     });
 });
 
