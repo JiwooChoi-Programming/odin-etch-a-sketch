@@ -10,7 +10,15 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-bottom: 20px;
     width: 400px;
+}
+
+#board {
+    border: 1px solid black;
+    display: grid;
+    height: 500px;
+    width: 500px;
 }
 
 #footer {
@@ -18,5 +26,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 20px;
     width: 500px;
 }
