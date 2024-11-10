@@ -22,8 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let size = getSize();
         createBoard(size);
     });
-
-    console.log("Hello World");
 });
 
 function createBoard(size) {
@@ -55,9 +53,14 @@ function getSize() {
 }
 
 function colorDiv() {
+    const randomColor = `hsl(${Math.random() * 360}, 100%, 50%)`
+
     if (click) {
         if (color === "random") {
-            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            this.style.backgroundColor = randomColor;
+            this.style.opacity = '0.2';
+        } else if (color === "opacity") {
+            this.style.opacity = `0.3`;
         } else {
             this.style.backgroundColor = "black";
         }
