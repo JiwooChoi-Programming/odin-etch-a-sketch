@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("body").addEventListener("click", (event) => {
         if (event.target.tagName !== "BUTTON") {
             click = !click;
-            let draw = document.querySelector("#draw")
+            let draw = document.querySelector("#draw");
 
             if (click === true) {
                 draw.textContent = "Now you can Draw";
@@ -45,24 +45,23 @@ function getSize() {
     if (input === "") {
         message.textContent = "Please provide a number";
     } else if (input < 1 || input > 100) {
-        message.textContent = "Provide a number between 1 and 100"
+        message.textContent = "Provide a number between 1 and 100";
     } else {
-        message.textContent = "Now you draw!"
+        message.textContent = "Now you draw!";
         return input;
     }
 }
 
 function colorDiv() {
-    const randomColor = `hsl(${Math.random() * 360}, 100%, 50%)`
-
     if (click) {
         if (color === "random") {
-            this.style.backgroundColor = randomColor;
-            this.style.opacity = '0.2';
+            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            this.style.opacity = 0.5;
         } else if (color === "opacity") {
-            this.style.opacity = `0.3`;
+            this.style.opacity = 1;
         } else {
             this.style.backgroundColor = "black";
+            this.style.opacity = 0.5;
         }
     }
 }
